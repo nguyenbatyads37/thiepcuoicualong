@@ -78,7 +78,9 @@
 <body>
     <div class="container-fluid d-flex justify-content-center">
         <div class="centered-div fade-in">
-            <div id="content"></div>
+            <div id="content">
+                <img class="content-img" id="content-img"/>
+            </div>
         </div>
     </div>
     <audio id="bg-music" autoplay loop>
@@ -98,41 +100,41 @@
 <script>
     const receivers = new Map();
     // friends
-    receivers.set('1wy605936Zc7FQWUjsSO', 'kientay.html');
-    receivers.set('wWBw2KKm6XUu01hKejww', 'daccong.html');
-    receivers.set('hku2RxfjTtBWlE7yyElN', 'tanluc.html');
-    receivers.set('xyVBmLu6C41Wr1nm8Yok', 'namphuong.html');
-    receivers.set('M8VDaFFirPAoVv3v3Bma', 'linhke.html');
-    receivers.set('LvdH3Aa5KfEgYRl6Oe9h', 'linhcao.html');
-    receivers.set('UKAflHbGhGUg2DcQy2K1', 'minhbinh.html');
-    receivers.set('SgTVjgl6hxULc3Z5PuP8', 'hailong.html');
-    receivers.set('BiiqdtIq8prG80QNx3SL', 'anhduc.html');
-    receivers.set('1iSSYzXkd0Pe7U3rTpYt', 'sonthai.html');
-    receivers.set('eHzWskxsIFHBwoNqfX3b', 'hang.html');
-    receivers.set('Ufrcqx5OW8R1rMIYNR6m', 'dinhtung.html');
+    receivers.set('1wy605936Zc7FQWUjsSO', 'kientay.png');
+    receivers.set('wWBw2KKm6XUu01hKejww', 'daccong.png');
+    receivers.set('hku2RxfjTtBWlE7yyElN', 'tanluc.png');
+    receivers.set('xyVBmLu6C41Wr1nm8Yok', 'namphuong.png');
+    receivers.set('M8VDaFFirPAoVv3v3Bma', 'linhke.png');
+    receivers.set('LvdH3Aa5KfEgYRl6Oe9h', 'linhcao.png');
+    receivers.set('UKAflHbGhGUg2DcQy2K1', 'minhbinh.png');
+    receivers.set('SgTVjgl6hxULc3Z5PuP8', 'hailong.png');
+    receivers.set('BiiqdtIq8prG80QNx3SL', 'anhduc.png');
+    receivers.set('1iSSYzXkd0Pe7U3rTpYt', 'sonthai.png');
+    receivers.set('eHzWskxsIFHBwoNqfX3b', 'hang.png');
+    receivers.set('Ufrcqx5OW8R1rMIYNR6m', 'dinhtung.png');
 
 
     //co-workers
-    receivers.set('jbtrsm5IbvsOc2DIc6us', 'thosan.html');
-    receivers.set('8yQtGKr7lXJhq5D7e5AW', 'trungsan.html');
-    receivers.set('NpaFfU9RWmKo51cqp9VE', 'tranthithuhuong.html');
-    receivers.set('VLnxnaXgvL9hZgAvNFZ5', 'tunglam.html');
-    receivers.set('sJqUTz87wJQtP1vuJfHq', 'loi.html');
-    receivers.set('2pXjJLlKoHDWcSkGD7w6', 'baonguyen.html');
-    receivers.set('cewK7JzmLibrg9Tgz0i0', 'nguyenduc.html');
-    receivers.set('j5EHc0YjgzOGuM7Pt4V1', 'luantran.html');
-    receivers.set('OJhD8TbJhqKbiOBkgEQV', 'minhngoc.html');
-    receivers.set('unQ8osGG0ELxkDmb9u8p', 'vankhanh.html');
-    receivers.set('y5rxAlFUga3ChPfwiKsx', 'thanhlong.html');
-    receivers.set('8Rny42GM2oMHh57ys7Lb', 'xuan.html');
-    receivers.set('DDX0FVw7mbfhSPOcDImb', 'lexuanthang.html');
-    receivers.set('egeiCTPB1WyZmpJgf5ol', 'hunglong.html');
+    receivers.set('jbtrsm5IbvsOc2DIc6us', 'thosan.png');
+    receivers.set('8yQtGKr7lXJhq5D7e5AW', 'trungsan.png');
+    receivers.set('NpaFfU9RWmKo51cqp9VE', 'tranthithuhuong.png');
+    receivers.set('VLnxnaXgvL9hZgAvNFZ5', 'tunglam.png');
+    receivers.set('sJqUTz87wJQtP1vuJfHq', 'loi.png');
+    receivers.set('2pXjJLlKoHDWcSkGD7w6', 'baonguyen.png');
+    receivers.set('cewK7JzmLibrg9Tgz0i0', 'nguyenduc.png');
+    receivers.set('j5EHc0YjgzOGuM7Pt4V1', 'luantran.png');
+    receivers.set('OJhD8TbJhqKbiOBkgEQV', 'minhngoc.png');
+    receivers.set('unQ8osGG0ELxkDmb9u8p', 'vankhanh.png');
+    receivers.set('y5rxAlFUga3ChPfwiKsx', 'thanhlong.png');
+    receivers.set('8Rny42GM2oMHh57ys7Lb', 'xuan.png');
+    receivers.set('DDX0FVw7mbfhSPOcDImb', 'lexuanthang.png');
+    receivers.set('egeiCTPB1WyZmpJgf5ol', 'hunglong.png');
 
     const params = new URLSearchParams(window.location.search);
     $(document).ready(function () {
         const rec = params.get('receiver');
-        const recHtml = receivers.get(rec);
-        if (!rec || !recHtml)
+        const recPng = receivers.get(rec);
+        if (!rec || !recPng)
             alert('Bạn là ai tui hôn bít, bạn ik ra ikkkkk -_-');
         else {
             var audio = document.getElementById("bg-music");
@@ -149,7 +151,8 @@
                 }
                 isPlaying = !isPlaying;
             });
-            $("#content").load('./imgs/' + recHtml);
+            // $("#content").load('./imgs/' + recHtml);
+            $("#content-img").attr("src", './imgs/' + recPng);
         }
 
     });
